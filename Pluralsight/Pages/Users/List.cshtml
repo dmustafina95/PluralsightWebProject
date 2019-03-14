@@ -1,0 +1,17 @@
+﻿@page
+@model ListModel
+@{
+}
+<h1>Users</h1>
+
+<table class="table">
+    @foreach (var user in Model.Users)
+    {
+    <tr>
+        <td>@user.Id</td>
+        <td>@user.FirstName</td>
+        <td>@user.LastName</td>
+        <td>@user.Dob</td>
+    </tr>
+    }
+</table>
