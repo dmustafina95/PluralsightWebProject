@@ -19,11 +19,17 @@ namespace Pluralsight.Data
             };
         }
 
-        public IEnumerable<User> GetAll()
+        public IEnumerable<User> GetUserByName(string name = null)
         {
             return from u in _users
+                   where string.IsNullOrEmpty(name) || u.FirstName.StartsWith(name)
                    orderby u.Id
                    select u;
+        }
+
+        public User GetById(int id)
+        {
+            return _users.SingleOrDefault(u => u.Id == id);
         }
     }
 }

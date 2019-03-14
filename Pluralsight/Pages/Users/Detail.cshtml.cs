@@ -7,23 +7,23 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Pluralsight.Core;
 using Pluralsight.Data;
 
-namespace Pluralsight.Pages.Restaurants
+namespace Pluralsight.Pages.Users
 {
     public class DetailModel : PageModel
     {
-        private readonly IRestaurantData _data;
+        private readonly IUserData _data;
 
-        public Restaurant Restaurant { get; set; }
+        public User User { get; set; }
 
-        public DetailModel(IRestaurantData data)
+        public DetailModel(IUserData data)
         {
             _data = data;
         }
 
-        public IActionResult OnGet(int restaurantId)
+        public IActionResult OnGet(int userId)
         {
-            Restaurant = _data.GetById(restaurantId);
-            if (Restaurant == null)
+            User = _data.GetById(userId);
+            if(User == null)
             {
                 return RedirectToPage("./NotFound");
             }

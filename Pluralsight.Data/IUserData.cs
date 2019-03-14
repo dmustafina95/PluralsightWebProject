@@ -7,6 +7,7 @@ namespace Pluralsight.Data
 {
     public interface IUserData
     {
-        IEnumerable<User> GetAll();
+        IEnumerable<User> GetUserByName(string name);
+        User GetById(int id);
     }
 }

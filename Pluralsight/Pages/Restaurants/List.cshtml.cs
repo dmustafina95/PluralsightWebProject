@@ -24,7 +24,7 @@ namespace Pluralsight.Pages.Restaurants
             _data = data;
         }
 
-        public void OnGet(string searchTerm)
+        public void OnGet()
         {
             Restaurants = _data.GetRestaurantsByName(SearchTerm);
         }

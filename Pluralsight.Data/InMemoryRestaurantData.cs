@@ -26,5 +26,11 @@ namespace Pluralsight.Data
                    orderby r.Name
                    select r;
         }
+
+        public Restaurant GetById(int id)
+        {
+            return _restaurants.SingleOrDefault(r => r.Id == id);
+        }
+
     }
 }

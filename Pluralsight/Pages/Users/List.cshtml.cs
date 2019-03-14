@@ -14,6 +14,9 @@ namespace Pluralsight.Pages.Users
         private readonly IUserData _data;
         public IEnumerable<User> Users { get; set; }
 
+        [BindProperty(SupportsGet = true)]
+        public string SearchTerm { get; set; }
+
         public ListModel(IUserData data)
         {
             _data = data;
@@ -21,7 +24,7 @@ namespace Pluralsight.Pages.Users
 
         public void OnGet()
         {
-            Users = _data.GetAll();
+            Users = _data.GetUserByName(SearchTerm);
         }
     }
 }

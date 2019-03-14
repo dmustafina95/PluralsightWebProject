@@ -1,0 +1,22 @@
+﻿@page "{userId:int}"
+@model Pluralsight.Pages.Users.DetailModel
+@{
+    ViewData["Title"] = "Detail";
+}
+
+<h2>Detail of @Model.User.FirstName @Model.User.LastName</h2>
+<div>
+    Id: @Model.User.Id
+</div>
+<div>
+    First name: @Model.User.FirstName
+</div>
+<div>
+    Last name: @Model.User.LastName
+</div>
+<div>
+    Date of birth: @Model.User.Dob
+</div>
+
+<a asp-page="./List" class="btn btn-primary">All users</a>
+
