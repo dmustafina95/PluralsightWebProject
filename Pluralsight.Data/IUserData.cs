@@ -9,5 +9,8 @@ namespace Pluralsight.Data
     {
         IEnumerable<User> GetUserByName(string name);
         User GetById(int id);
+        User Update(User updatedUser);
+        User Add(User newUser);
+        int Commit();
     }
 }

@@ -12,7 +12,6 @@ namespace Pluralsight.Pages.Restaurants
 {
     public class ListModel : PageModel
     {
-        private readonly IConfiguration _config;
         private readonly IRestaurantData _data;
         public IEnumerable<Restaurant> Restaurants { get; set; }
 

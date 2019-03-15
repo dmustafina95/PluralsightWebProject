@@ -31,5 +31,30 @@ namespace Pluralsight.Data
         {
             return _users.SingleOrDefault(u => u.Id == id);
         }
+
+        public User Update(User updatedUser)
+        {
+            var user = _users.SingleOrDefault(u => u.Id == updatedUser.Id);
+            if(user != null)
+            {
+                user.FirstName = updatedUser.FirstName;
+                user.LastName = updatedUser.LastName;
+                user.Dob = updatedUser.Dob;
+            }
+
+            return user;
+        }
+
+        public int Commit()
+        {
+            return 1;
+        }
+
+        public User Add(User newUser)
+        {
+            newUser.Id = _users.Max(u => u.Id) + 1;
+            _users.Add(newUser);
+            return newUser;
+        }
     }
 }

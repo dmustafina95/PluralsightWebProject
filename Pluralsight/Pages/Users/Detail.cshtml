@@ -5,6 +5,12 @@
 }
 
 <h2>Detail of @Model.User.FirstName @Model.User.LastName</h2>
+
+@if(Model.Message != null)
+{
+    <div class="alert alert-info">@Model.Message</div>
+}
+
 <div>
     Id: @Model.User.Id
 </div>

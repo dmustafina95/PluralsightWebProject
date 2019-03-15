@@ -12,8 +12,9 @@ namespace Pluralsight.Pages.Users
     public class DetailModel : PageModel
     {
         private readonly IUserData _data;
-
         public User User { get; set; }
+        [TempData]
+        public string Message { get; set; }
 
         public DetailModel(IUserData data)
         {
