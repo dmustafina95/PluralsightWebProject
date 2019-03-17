@@ -55,5 +55,15 @@ namespace Pluralsight.Data
             _restaurants.Add(newRestaurant);
             return newRestaurant;
         }
+
+        public Restaurant Delete(int id)
+        {
+            var restaurant = _restaurants.SingleOrDefault(r => r.Id == id);
+            if(restaurant != null)
+            {
+                _restaurants.Remove(restaurant);
+            }
+            return restaurant;
+        }
     }
 }

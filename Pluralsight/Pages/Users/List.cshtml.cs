@@ -24,7 +24,7 @@ namespace Pluralsight.Pages.Users
 
         public void OnGet()
         {
-            Users = _data.GetUserByName(SearchTerm);
+            Users = _data.GetByFirstName(SearchTerm);
         }
     }
 }

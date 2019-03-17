@@ -4,7 +4,7 @@
     {
         None,
         Mexican,
-        Itaian,
+        Italian,
         Indian
     }
 }

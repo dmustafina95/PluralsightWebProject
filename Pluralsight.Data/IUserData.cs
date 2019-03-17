@@ -7,10 +7,11 @@ namespace Pluralsight.Data
 {
     public interface IUserData
     {
-        IEnumerable<User> GetUserByName(string name);
+        IEnumerable<User> GetByFirstName(string name);
         User GetById(int id);
         User Update(User updatedUser);
         User Add(User newUser);
+        User Delete(int id);
         int Commit();
     }
 }

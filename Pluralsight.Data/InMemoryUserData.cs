@@ -19,7 +19,7 @@ namespace Pluralsight.Data
             };
         }
 
-        public IEnumerable<User> GetUserByName(string name = null)
+        public IEnumerable<User> GetByFirstName(string name = null)
         {
             return from u in _users
                    where string.IsNullOrEmpty(name) || u.FirstName.StartsWith(name)
@@ -55,6 +55,17 @@ namespace Pluralsight.Data
             newUser.Id = _users.Max(u => u.Id) + 1;
             _users.Add(newUser);
             return newUser;
+        }
+
+        public User Delete(int id)
+        {
+            var user = _users.SingleOrDefault(u => u.Id == id);
+            if(user != null)
+            {
+                _users.Remove(user);
+            }
+
+            return user;
         }
     }
 }
