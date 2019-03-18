@@ -13,7 +13,7 @@ namespace Pluralsight.Data
         {
             _restaurants = new List<Restaurant>()
             {
-                new Restaurant{Id = 1, Name = "Scott's Pizza", Location = "Maryland", Cuisine = CuisineType.Itaian},
+                new Restaurant{Id = 1, Name = "Scott's Pizza", Location = "Maryland", Cuisine = CuisineType.Italian},
                 new Restaurant{Id = 2, Name = "Cinammon Club", Location = "London", Cuisine = CuisineType.None},
                 new Restaurant{Id = 3, Name = "La Costa", Location = "New York", Cuisine = CuisineType.Indian},
             };

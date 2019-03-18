@@ -14,6 +14,8 @@ namespace Pluralsight.Pages.Restaurants
     {
         private readonly IRestaurantData _data;
         public IEnumerable<Restaurant> Restaurants { get; set; }
+        [TempData]
+        public string Message { get; set; }
 
         [BindProperty(SupportsGet =true)]
         public string SearchTerm { get; set; }

@@ -3,6 +3,11 @@
 @{
 }
 <h1>Users</h1>
+
+@if (Model.Message != null)
+{
+    <div class="alert alert-info">@Model.Message</div>
+}
 <form method="get">
     <div class="form-group">
         <div class="input-group">
@@ -16,30 +21,9 @@
     </div>
 </form>
 
-<table class="table">
-    @foreach (var user in Model.Users)
-    {
-        <tr>
-            <td>@user.Id</td>
-            <td>@user.FirstName</td>
-            <td>@user.LastName</td>
-            <td>@user.Dob</td>
-            <td>
-                <a class="btn btn-lg"
-                   asp-page="./Detail"
-                   asp-route-userId="@user.Id">
-                    <i class="glyphicon glyphicon-zoom-in"></i>
-                </a>
-            </td>
-            <td>
-                <a class="btn btn-lg"
-                   asp-page="./Edit"
-                   asp-route-userId="@user.Id">
-                    <i class="glyphicon glyphicon-edit"></i>
-                </a>
-            </td>
-        </tr>
-    }
-</table>
+@foreach(var user in Model.Users)
+{
+    <partial name="_Summary" model="user" />
+}
 
 <a asp-page="./Edit" class="btn btn-primary">Add new</a>

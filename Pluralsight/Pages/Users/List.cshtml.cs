@@ -13,6 +13,8 @@ namespace Pluralsight.Pages.Users
     {
         private readonly IUserData _data;
         public IEnumerable<User> Users { get; set; }
+        [TempData]
+        public string Message { get; set; }
 
         [BindProperty(SupportsGet = true)]
         public string SearchTerm { get; set; }
