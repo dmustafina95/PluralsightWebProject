@@ -67,5 +67,10 @@ namespace Pluralsight.Data
 
             return user;
         }
+
+        public int GetUserCount()
+        {
+            return _users.Count;
+        }
     }
 }

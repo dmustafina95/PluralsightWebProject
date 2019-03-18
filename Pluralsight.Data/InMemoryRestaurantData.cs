@@ -65,5 +65,10 @@ namespace Pluralsight.Data
             }
             return restaurant;
         }
+
+        public int GetRestaurantCount()
+        {
+            return _restaurants.Count;
+        }
     }
 }

@@ -41,6 +41,11 @@ namespace Pluralsight.Data
             return _db.Restaurants.Find(id);
         }
 
+        public int GetRestaurantCount()
+        {
+            return _db.Restaurants.Count();
+        }
+
         public IEnumerable<Restaurant> GetRestaurantsByName(string name)
         {
             var query = from r in _db.Restaurants

@@ -56,5 +56,10 @@ namespace Pluralsight.Data
             entity.State = EntityState.Modified;
             return updatedUser;
         }
+
+        public int GetUserCount()
+        {
+            return _db.Users.Count();
+        }
     }
 }

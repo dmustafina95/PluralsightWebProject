@@ -46,6 +46,11 @@
         @RenderBody()
         <hr />
         <footer>
+            <div class="well">
+                <vc:restaurant-count></vc:restaurant-count>
+                <vc:user-count></vc:user-count>
+            </div>
+            
             @RenderSection("footer", required: false)
             <p>&copy; 2019 - Pluralsight</p>
         </footer>

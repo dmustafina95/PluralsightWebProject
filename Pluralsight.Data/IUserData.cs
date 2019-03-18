@@ -12,6 +12,7 @@ namespace Pluralsight.Data
         User Update(User updatedUser);
         User Add(User newUser);
         User Delete(int id);
+        int GetUserCount();
         int Commit();
     }
 }
